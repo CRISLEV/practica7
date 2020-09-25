@@ -37,9 +37,27 @@ pipeline {
                 """
             }
         }
+        stage('Analysis') {
+            steps {
+                echo 'Analysis..'
+                C:\sonar-scanner-cli-4.4.0.2\sonar-scanner-4.4.0.2170-windows\bin\sonar-scanner.bat
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
+                cd Cliente
+                call python setup.py sdist
+                cd ..
+                cd esb
+                call python setup.py sdist
+                cd ..
+                cd Repartidor
+                call python setup.py sdist
+                cd ..
+                cd Restaurante
+                call python setup.py sdist
+                cd ..
             }
         }
         stage('Deploy') {
