@@ -7,7 +7,7 @@ pipeline {
                 echo 'Testing..'
                 bat """
                     cd Cliente
-                    coverage run main\\test.py
+                    call C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python38-32\\Scripts\\coverage run main\\test.py
                     call coverage report
                     call coverage xml
                 """
