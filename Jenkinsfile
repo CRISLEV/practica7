@@ -69,10 +69,10 @@ pipeline {
                 echo 'Deploying....'
                 bat """
                     call git clone https://github.com/CRISLEV/artefactos_practica7.git
-                    COPY Cliente\dist\practica5_client-1.2.0.tar.gz artefactos_practica7
-                    COPY Restaurante\dist\practica5_restaurante-1.2.0.tar.gz artefactos_practica7
-                    COPY Repartidor\dist\practica5_repartidor-1.2.0.tar.gz artefactos_practica7
-                    COPY ebs\dist\practica5_ebs-1.2.0.tar.gz artefactos_practica7
+                    COPY Cliente\\dist\\practica5_client-1.2.0.tar.gz artefactos_practica7
+                    COPY Restaurante\\dist\\practica5_restaurante-1.2.0.tar.gz artefactos_practica7
+                    COPY Repartidor\\dist\\practica5_repartidor-1.2.0.tar.gz artefactos_practica7
+                    COPY ebs\\dist\\practica5_ebs-1.2.0.tar.gz artefactos_practica7
                     call git add .
                     call git commit -m "Nuevos artefactos - `date +'%Y-%m-%d %H:%M:%S'`"
                     call git push origin master
