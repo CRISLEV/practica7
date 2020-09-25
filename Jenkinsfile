@@ -40,7 +40,7 @@ pipeline {
         stage('Analysis') {
             steps {
                 echo 'Analysis..'
-                call C:\sonar-scanner-cli-4.4.0.2\sonar-scanner-4.4.0.2170-windows\bin\sonar-scanner.bat
+                call C:\\sonar-scanner-cli-4.4.0.2\\sonar-scanner-4.4.0.2170-windows\\bin\\sonar-scanner.bat
             }
         }
         stage('Build') {
