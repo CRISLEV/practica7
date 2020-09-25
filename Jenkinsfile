@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'Testing..
+                echo 'Testing..'
                 bat """
                     cd C:\\Users\\Usuario\\Documents\\Proyectos\\SA\\practica7\\Cliente
                     call C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python38-32\\Scripts\\coverage run main\\test.py
