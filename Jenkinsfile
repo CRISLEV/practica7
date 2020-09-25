@@ -40,24 +40,28 @@ pipeline {
         stage('Analysis') {
             steps {
                 echo 'Analysis..'
-                call ${SONNARSCAN}
+                bat """
+                    call ${SONNARSCAN}
+                """
             }
         }
         stage('Build') {
             steps {
-                echo 'Building..'
-                cd Cliente
-                call python setup.py sdist
-                cd ..
-                cd esb
-                call python setup.py sdist
-                cd ..
-                cd Repartidor
-                call python setup.py sdist
-                cd ..
-                cd Restaurante
-                call python setup.py sdist
-                cd ..
+                bat """
+                    echo 'Building..'
+                    cd Cliente
+                    call python setup.py sdist
+                    cd ..
+                    cd esb
+                    call python setup.py sdist
+                    cd ..
+                    cd Repartidor
+                    call python setup.py sdist
+                    cd ..
+                    cd Restaurante
+                    call python setup.py sdist
+                    cd ..
+                """
             }
         }
         stage('Deploy') {
