@@ -36,3 +36,7 @@ En la carpeta de cada proyecto, ejecutar el siguiente comando:
 
 Este comando hara la construccion de artefactos por medio de compresion de archivos, ya que es codigo interpretado. 
 El archivo .tar.gz esta ubicado en la carpeta /dist.
+
+
+## Repositorio de Artefactos
+https://github.com/CRISLEV/artefactos_practica7

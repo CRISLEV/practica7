@@ -1,0 +1,490 @@
+Lanzada por el usuario unknown or anonymous
+Obtained Jenkinsfile from git https://github.com/CRISLEV/practica7.git
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins  in C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git.exe
+using credential practica4sa
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/CRISLEV/practica7.git # timeout=10
+Fetching upstream changes from https://github.com/CRISLEV/practica7.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.26.2.windows.1'
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --force --progress -- https://github.com/CRISLEV/practica7.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision ddd5852c5233f9e3e0eb9eb008b77a4bf3f54e3e (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f ddd5852c5233f9e3e0eb9eb008b77a4bf3f54e3e # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git.exe rev-list --no-walk e1e045805410ef7e93eea40e97e89381fda37deb # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] echo
+Testing..
+[Pipeline] bat
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd Cliente 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Cliente>call coverage run main\test.py 
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+Hola, soy el ciente.
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Cliente>call coverage report 
+Name             Stmts   Miss  Cover
+------------------------------------
+main\Client.py      50     35    30%
+main\test.py         9      0   100%
+------------------------------------
+TOTAL               59     35    41%
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Cliente>call coverage xml 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Cliente>RENAME coverage.xml coverage-client.xml 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Cliente>cd .. 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>MOVE Cliente\coverage-client.xml Reports 
+Se han movido         1 archivos.
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd esb 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\esb>call coverage run main\test.py 
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+Hola, soy el esb.
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\esb>call coverage report 
+Name           Stmts   Miss  Cover
+----------------------------------
+main\esb.py       71     45    37%
+main\test.py       9      0   100%
+----------------------------------
+TOTAL             80     45    44%
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\esb>call coverage xml 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\esb>RENAME coverage.xml coverage-esb.xml 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\esb>cd .. 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>MOVE esb\coverage-esb.xml Reports 
+Se han movido         1 archivos.
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd Repartidor 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Repartidor>call coverage run main\test.py 
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+Hola, soy el repartidor.
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Repartidor>call coverage report 
+Name                      Stmts   Miss  Cover
+---------------------------------------------
+main\Repartidor_main.py      54     38    30%
+main\test.py                  9      0   100%
+---------------------------------------------
+TOTAL                        63     38    40%
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Repartidor>call coverage xml 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Repartidor>RENAME coverage.xml coverage-repartidor.xml 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Repartidor>cd .. 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>MOVE Repartidor\coverage-repartidor.xml Reports 
+Se han movido         1 archivos.
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd Restaurante 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Restaurante>call coverage run main\test.py 
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+Hola, soy el restaurante.
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Restaurante>call coverage report 
+Name                  Stmts   Miss  Cover
+-----------------------------------------
+main\Restaurante.py      75     54    28%
+main\test.py              9      0   100%
+-----------------------------------------
+TOTAL                    84     54    36%
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Restaurante>call coverage xml 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Restaurante>RENAME coverage.xml coverage-restaurante.xml 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Restaurante>cd .. 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>MOVE Restaurante\coverage-restaurante.xml Reports' 
+Se han movido         1 archivos.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Analysis)
+[Pipeline] echo
+Analysis..
+[Pipeline] bat
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>call C:\sonar-scanner-cli-4.4.0.2\sonar-scanner-4.4.0.2170-windows\bin\sonar-scanner.bat 
+INFO: Scanner configuration file: C:\sonar-scanner-cli-4.4.0.2\sonar-scanner-4.4.0.2170-windows\bin\..\conf\sonar-scanner.properties
+INFO: Project root configuration file: NONE
+INFO: SonarScanner 4.4.0.2170
+INFO: Java 11.0.3 AdoptOpenJDK (64-bit)
+INFO: Windows 10 10.0 amd64
+INFO: User cache: C:\Users\admin\.sonar\cache
+INFO: Scanner configuration file: C:\sonar-scanner-cli-4.4.0.2\sonar-scanner-4.4.0.2170-windows\bin\..\conf\sonar-scanner.properties
+INFO: Project root configuration file: NONE
+INFO: Analyzing on SonarQube server 8.4.2
+INFO: Default locale: "es_GT", source code encoding: "UTF-8"
+INFO: Load global settings
+INFO: Load global settings (done) | time=45ms
+INFO: Server id: BF41A1F2-AXSV175xQGcsPhI1CoEk
+INFO: User cache: C:\Users\admin\.sonar\cache
+INFO: Load/download plugins
+INFO: Load plugins index
+INFO: Load plugins index (done) | time=30ms
+INFO: Load/download plugins (done) | time=81ms
+INFO: Process project properties
+INFO: Process project properties (done) | time=8ms
+INFO: Execute project builders
+INFO: Execute project builders (done) | time=2ms
+INFO: Project key: practica7sa
+INFO: Base dir: C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa
+INFO: Working dir: C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\.scannerwork
+INFO: Load project settings for component key: 'practica7sa'
+INFO: Load project settings for component key: 'practica7sa' (done) | time=10ms
+INFO: Load quality profiles
+INFO: Load quality profiles (done) | time=163ms
+INFO: Auto-configuring with CI 'Jenkins'
+INFO: Load active rules
+INFO: Load active rules (done) | time=882ms
+INFO: Indexing files...
+INFO: Project configuration:
+INFO: Load project repositories
+INFO: Load project repositories (done) | time=102ms
+INFO: 4865 files indexed
+INFO: 3 files ignored because of scm ignore settings
+INFO: Quality profile for css: Sonar way
+INFO: Quality profile for js: Sonar way
+INFO: Quality profile for py: Sonar way
+INFO: Quality profile for xml: Sonar way
+INFO: ------------- Run sensors on module practica7sa
+INFO: Load metrics repository
+INFO: Load metrics repository (done) | time=17ms
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$1 (file:/C:/Users/admin/.sonar/cache/52f5340dd05620cd162e2b9a45a57124/sonar-javascript-plugin.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+INFO: Sensor Python Sensor [python]
+INFO: Starting global symbols computation
+INFO: 2218 source files to be analyzed
+INFO: 190/2218 files analyzed, current file: esb/venv/Lib/site-packages/pip/_vendor/idna/idnadata.py
+INFO: 737/2218 files analyzed, current file: Restaurante/venv/Lib/site-packages/pip/_vendor/chardet/langcyrillicmodel.py
+WARN: Invalid character encountered in file C:/Users/admin/AppData/Local/Jenkins.jenkins/workspace/practica7sa/Restaurante/venv/Lib/site-packages/pip/_vendor/pkg_resources/__init__.py at line 1903 for encoding UTF-8. Please fix file content or configure the encoding to be used using property 'sonar.sourceEncoding'.
+WARN: Invalid character encountered in file C:/Users/admin/AppData/Local/Jenkins.jenkins/workspace/practica7sa/esb/venv/Lib/site-packages/pkg_resources/__init__.py at line 1896 for encoding UTF-8. Please fix file content or configure the encoding to be used using property 'sonar.sourceEncoding'.
+WARN: Invalid character encountered in file C:/Users/admin/AppData/Local/Jenkins.jenkins/workspace/practica7sa/Repartidor/venv/Lib/site-packages/pkg_resources/__init__.py at line 1896 for encoding UTF-8. Please fix file content or configure the encoding to be used using property 'sonar.sourceEncoding'.
+WARN: Invalid character encountered in file C:/Users/admin/AppData/Local/Jenkins.jenkins/workspace/practica7sa/Repartidor/venv/Lib/site-packages/pip/_vendor/pkg_resources/__init__.py at line 1903 for encoding UTF-8. Please fix file content or configure the encoding to be used using property 'sonar.sourceEncoding'.
+INFO: 1333/2218 files analyzed, current file: Restaurante/venv/Lib/site-packages/setuptools/_distutils/fancy_getopt.py
+WARN: Invalid character encountered in file C:/Users/admin/AppData/Local/Jenkins.jenkins/workspace/practica7sa/esb/venv/Lib/site-packages/pip/_vendor/pkg_resources/__init__.py at line 1903 for encoding UTF-8. Please fix file content or configure the encoding to be used using property 'sonar.sourceEncoding'.
+WARN: Invalid character encountered in file C:/Users/admin/AppData/Local/Jenkins.jenkins/workspace/practica7sa/Restaurante/venv/Lib/site-packages/pkg_resources/__init__.py at line 1896 for encoding UTF-8. Please fix file content or configure the encoding to be used using property 'sonar.sourceEncoding'.
+INFO: 2005/2218 files analyzed, current file: Restaurante/venv/Lib/site-packages/chardet/jpcntx.py
+INFO: Starting rules execution
+INFO: 2218/2218 source files have been analyzed
+INFO: 2218 source files to be analyzed
+INFO: 176/2218 files analyzed, current file: esb/venv/Lib/site-packages/setuptools/_vendor/pyparsing.py
+INFO: 368/2218 files analyzed, current file: Repartidor/venv/Lib/site-packages/pkg_resources/_vendor/pyparsing.py
+INFO: 651/2218 files analyzed, current file: Repartidor/venv/Lib/site-packages/chardet/euckrfreq.py
+INFO: 893/2218 files analyzed, current file: Repartidor/venv/Lib/site-packages/pip/_vendor/urllib3/util/ssl_.py
+INFO: 1118/2218 files analyzed, current file: Restaurante/venv/Lib/site-packages/pip/_vendor/chardet/langhebrewmodel.py
+INFO: 1382/2218 files analyzed, current file: esb/venv/Lib/site-packages/setuptools/_distutils/ccompiler.py
+INFO: 1675/2218 files analyzed, current file: Repartidor/venv/Lib/site-packages/setuptools/_distutils/command/bdist.py
+INFO: 1943/2218 files analyzed, current file: Restaurante/venv/Lib/site-packages/pip/_vendor/six.py
+INFO: 2197/2218 files analyzed, current file: Repartidor/venv/Lib/site-packages/setuptools/_vendor/packaging/tags.py
+INFO: Sensor Python Sensor [python] (done) | time=134573ms
+INFO: 2218/2218 source files have been analyzed
+INFO: Sensor Cobertura Sensor for Python coverage [python]
+WARN: No report was found for sonar.python.coverage.reportPaths using pattern C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Reports\coverage-restaurante.xml
+INFO: Python test coverage
+INFO: Parsing report 'C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Reports\coverage-client.xml'
+INFO: Parsing report 'C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Reports\coverage-esb.xml'
+INFO: Parsing report 'C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Reports\coverage-repartidor.xml'
+INFO: Sensor Cobertura Sensor for Python coverage [python] (done) | time=1852ms
+INFO: Sensor PythonXUnitSensor [python]
+INFO: Sensor PythonXUnitSensor [python] (done) | time=446ms
+INFO: Sensor SonarCSS Metrics [cssfamily]
+INFO: Sensor SonarCSS Metrics [cssfamily] (done) | time=45ms
+INFO: Sensor SonarCSS Rules [cssfamily]
+INFO: 3 source files to be analyzed
+INFO: 3/3 source files have been analyzed
+INFO: Sensor SonarCSS Rules [cssfamily] (done) | time=5070ms
+INFO: Sensor JaCoCo XML Report Importer [jacoco]
+INFO: 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+INFO: No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=10ms
+INFO: Sensor JavaScript analysis [javascript]
+INFO: 3 source files to be analyzed
+INFO: 3/3 source files have been analyzed
+INFO: Sensor SonarJS [javascript]
+INFO: 3 source files to be analyzed
+INFO: Sensor SonarJS [javascript] (done) | time=573ms
+INFO: 3/3 source files have been analyzed
+INFO: Sensor JavaScript analysis [javascript] (done) | time=8879ms
+INFO: Sensor JavaXmlSensor [java]
+INFO: 22 source files to be analyzed
+INFO: Sensor JavaXmlSensor [java] (done) | time=388ms
+INFO: 22/22 source files have been analyzed
+INFO: Sensor HTML [web]
+INFO: Sensor HTML [web] (done) | time=16ms
+INFO: Sensor XML Sensor [xml]
+INFO: 22 source files to be analyzed
+INFO: Sensor XML Sensor [xml] (done) | time=313ms
+INFO: 22/22 source files have been analyzed
+INFO: ------------- Run sensors on project
+INFO: Sensor Zero Coverage Sensor
+INFO: Sensor Zero Coverage Sensor (done) | time=1671ms
+INFO: SCM Publisher SCM provider for this project is: git
+INFO: SCM Publisher 3 source files to be analyzed
+INFO: SCM Publisher 0/3 source files have been analyzed (done) | time=147ms
+WARN: Missing blame information for the following files:
+WARN:   * Reports/coverage-esb.xml
+WARN:   * Reports/coverage-client.xml
+WARN:   * Reports/coverage-repartidor.xml
+WARN: This may lead to missing/broken features in SonarQube
+INFO: CPD Executor 233 files had no CPD blocks
+INFO: CPD Executor Calculating CPD for 1988 files
+INFO: CPD Executor CPD calculation finished (done) | time=4274ms
+INFO: Analysis report generated in 3073ms, dir size=56 MB
+INFO: Analysis report compressed in 78020ms, zip size=20 MB
+INFO: Analysis report uploaded in 341ms
+INFO: ANALYSIS SUCCESSFUL, you can browse http://localhost:9000/dashboard?id=practica7sa
+INFO: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+INFO: More about the report processing at http://localhost:9000/api/ce/task?id=AXTHXjZy57stHvKOQCzo
+INFO: Analysis total time: 4:18.233 s
+INFO: ------------------------------------------------------------------------
+INFO: EXECUTION SUCCESS
+INFO: ------------------------------------------------------------------------
+INFO: Total time: 4:19.567s
+INFO: Final Memory: 506M/1236M
+INFO: ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] bat
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>echo 'Building..' 
+'Building..'
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd Cliente 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Cliente>call python setup.py sdist 
+running sdist
+running egg_info
+creating practica5_client.egg-info
+writing practica5_client.egg-info\PKG-INFO
+writing dependency_links to practica5_client.egg-info\dependency_links.txt
+writing top-level names to practica5_client.egg-info\top_level.txt
+writing manifest file 'practica5_client.egg-info\SOURCES.txt'
+reading manifest file 'practica5_client.egg-info\SOURCES.txt'
+writing manifest file 'practica5_client.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating practica5_client-1.2.0
+creating practica5_client-1.2.0\main
+creating practica5_client-1.2.0\practica5_client.egg-info
+copying files to practica5_client-1.2.0...
+copying setup.py -> practica5_client-1.2.0
+copying main\Client.py -> practica5_client-1.2.0\main
+copying main\__init__.py -> practica5_client-1.2.0\main
+copying main\test.py -> practica5_client-1.2.0\main
+copying practica5_client.egg-info\PKG-INFO -> practica5_client-1.2.0\practica5_client.egg-info
+copying practica5_client.egg-info\SOURCES.txt -> practica5_client-1.2.0\practica5_client.egg-info
+copying practica5_client.egg-info\dependency_links.txt -> practica5_client-1.2.0\practica5_client.egg-info
+copying practica5_client.egg-info\top_level.txt -> practica5_client-1.2.0\practica5_client.egg-info
+Writing practica5_client-1.2.0\setup.cfg
+creating dist
+Creating tar archive
+removing 'practica5_client-1.2.0' (and everything under it)
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Cliente>cd .. 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd esb 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\esb>call python setup.py sdist 
+running sdist
+running egg_info
+creating practica5_ebs.egg-info
+writing practica5_ebs.egg-info\PKG-INFO
+writing dependency_links to practica5_ebs.egg-info\dependency_links.txt
+writing top-level names to practica5_ebs.egg-info\top_level.txt
+writing manifest file 'practica5_ebs.egg-info\SOURCES.txt'
+reading manifest file 'practica5_ebs.egg-info\SOURCES.txt'
+writing manifest file 'practica5_ebs.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating practica5_ebs-1.2.0
+creating practica5_ebs-1.2.0\main
+creating practica5_ebs-1.2.0\practica5_ebs.egg-info
+copying files to practica5_ebs-1.2.0...
+copying setup.py -> practica5_ebs-1.2.0
+copying main\__init__.py -> practica5_ebs-1.2.0\main
+copying main\esb.py -> practica5_ebs-1.2.0\main
+copying main\test.py -> practica5_ebs-1.2.0\main
+copying practica5_ebs.egg-info\PKG-INFO -> practica5_ebs-1.2.0\practica5_ebs.egg-info
+copying practica5_ebs.egg-info\SOURCES.txt -> practica5_ebs-1.2.0\practica5_ebs.egg-info
+copying practica5_ebs.egg-info\dependency_links.txt -> practica5_ebs-1.2.0\practica5_ebs.egg-info
+copying practica5_ebs.egg-info\top_level.txt -> practica5_ebs-1.2.0\practica5_ebs.egg-info
+Writing practica5_ebs-1.2.0\setup.cfg
+creating dist
+Creating tar archive
+removing 'practica5_ebs-1.2.0' (and everything under it)
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\esb>cd .. 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd Repartidor 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Repartidor>call python setup.py sdist 
+running sdist
+running egg_info
+creating practica5_repartidor.egg-info
+writing practica5_repartidor.egg-info\PKG-INFO
+writing dependency_links to practica5_repartidor.egg-info\dependency_links.txt
+writing top-level names to practica5_repartidor.egg-info\top_level.txt
+writing manifest file 'practica5_repartidor.egg-info\SOURCES.txt'
+reading manifest file 'practica5_repartidor.egg-info\SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'practica5_repartidor.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating practica5_repartidor-1.2.0
+creating practica5_repartidor-1.2.0\main
+creating practica5_repartidor-1.2.0\practica5_repartidor.egg-info
+copying files to practica5_repartidor-1.2.0...
+copying MANIFEST.in -> practica5_repartidor-1.2.0
+copying requirements.txt -> practica5_repartidor-1.2.0
+copying setup.py -> practica5_repartidor-1.2.0
+copying main\Repartidor_main.py -> practica5_repartidor-1.2.0\main
+copying main\__init__.py -> practica5_repartidor-1.2.0\main
+copying main\test.py -> practica5_repartidor-1.2.0\main
+copying practica5_repartidor.egg-info\PKG-INFO -> practica5_repartidor-1.2.0\practica5_repartidor.egg-info
+copying practica5_repartidor.egg-info\SOURCES.txt -> practica5_repartidor-1.2.0\practica5_repartidor.egg-info
+copying practica5_repartidor.egg-info\dependency_links.txt -> practica5_repartidor-1.2.0\practica5_repartidor.egg-info
+copying practica5_repartidor.egg-info\top_level.txt -> practica5_repartidor-1.2.0\practica5_repartidor.egg-info
+Writing practica5_repartidor-1.2.0\setup.cfg
+creating dist
+Creating tar archive
+removing 'practica5_repartidor-1.2.0' (and everything under it)
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Repartidor>cd .. 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd Restaurante 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Restaurante>call python setup.py sdist 
+running sdist
+running egg_info
+creating practica5_restaurant.egg-info
+writing practica5_restaurant.egg-info\PKG-INFO
+writing dependency_links to practica5_restaurant.egg-info\dependency_links.txt
+writing top-level names to practica5_restaurant.egg-info\top_level.txt
+writing manifest file 'practica5_restaurant.egg-info\SOURCES.txt'
+reading manifest file 'practica5_restaurant.egg-info\SOURCES.txt'
+writing manifest file 'practica5_restaurant.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating practica5_restaurant-1.2.0
+creating practica5_restaurant-1.2.0\main
+creating practica5_restaurant-1.2.0\practica5_restaurant.egg-info
+copying files to practica5_restaurant-1.2.0...
+copying setup.py -> practica5_restaurant-1.2.0
+copying main\Restaurante.py -> practica5_restaurant-1.2.0\main
+copying main\__init__.py -> practica5_restaurant-1.2.0\main
+copying main\test.py -> practica5_restaurant-1.2.0\main
+copying practica5_restaurant.egg-info\PKG-INFO -> practica5_restaurant-1.2.0\practica5_restaurant.egg-info
+copying practica5_restaurant.egg-info\SOURCES.txt -> practica5_restaurant-1.2.0\practica5_restaurant.egg-info
+copying practica5_restaurant.egg-info\dependency_links.txt -> practica5_restaurant-1.2.0\practica5_restaurant.egg-info
+copying practica5_restaurant.egg-info\top_level.txt -> practica5_restaurant-1.2.0\practica5_restaurant.egg-info
+Writing practica5_restaurant-1.2.0\setup.cfg
+creating dist
+Creating tar archive
+removing 'practica5_restaurant-1.2.0' (and everything under it)
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\Restaurante>cd .. 
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] echo
+Deploying....
+[Pipeline] bat
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>call git clone https://github.com/CRISLEV/artefactos_practica7.git 
+fatal: destination path 'artefactos_practica7' already exists and is not an empty directory.
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>COPY Cliente\dist\practica5_client-1.2.0.tar.gz artefactos_practica7 
+        1 archivo(s) copiado(s).
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>COPY Restaurante\dist\practica5_restaurant-1.2.0.tar.gz artefactos_practica7 
+        1 archivo(s) copiado(s).
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>COPY Repartidor\dist\practica5_repartidor-1.2.0.tar.gz artefactos_practica7 
+        1 archivo(s) copiado(s).
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>COPY esb\dist\practica5_ebs-1.2.0.tar.gz artefactos_practica7 
+        1 archivo(s) copiado(s).
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa>cd artefactos_practica7 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\artefactos_practica7>call git add . 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\artefactos_practica7>call git config user.email "clevi.gonzalez@gmail.com" 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\artefactos_practica7>call git config user.name "Christian Gonzalez" 
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\artefactos_practica7>call git commit -m "Nuevos artefactos - `date +'m-H:S'`" 
+[master 0a22c49] Nuevos artefactos - `date +'m-H:S'`
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 practica5_client-1.2.0.tar.gz
+ create mode 100644 practica5_ebs-1.2.0.tar.gz
+ create mode 100644 practica5_repartidor-1.2.0.tar.gz
+ create mode 100644 practica5_restaurant-1.2.0.tar.gz
+
+C:\Users\admin\AppData\Local\Jenkins.jenkins\workspace\practica7sa\artefactos_practica7>call git push origin master 
+To https://github.com/CRISLEV/artefactos_practica7.git
+   d852523..0a22c49  master -> master
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
