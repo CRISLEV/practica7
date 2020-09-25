@@ -77,7 +77,7 @@ pipeline {
                     call git add .
                     call git config user.email "clevi.gonzalez@gmail.com"
                     call git config user.name "Christian Gonzalez"
-                    call git commit -m "Nuevos artefactos - `date +'%Y-%m-%d %H:%M:%S'`"
+                    call git commit -m "Nuevos artefactos."
                     call git push origin master
                 """
             }
